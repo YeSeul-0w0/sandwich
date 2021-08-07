@@ -6,18 +6,43 @@ import listPlugin from '@fullcalendar/list';
 
 function view(){
     document.addEventListener('DOMContentLoaded', function() {
-  var calendarEl = document.getElementById('calendar');
+  const calendarEl = document.getElementById('calendar');
 
-  var calendar = new Calendar(calendarEl, {
+  // const name = document.getElementById('input').value;
+
+  const calendar = new Calendar(calendarEl, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
     header: {
       left: 'prev,next today',
       center: 'title',
       right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
     },
-    navLinks: true, // can click day/week names to navigate views
-    editable: true,
-    eventLimit: true, // allow "more" link when too many events
+    footerToolbar:{
+      center:'addEventButton'
+    },
+    customButtons: {
+      addEventButton: {
+        text: 'add event...',
+        click: function() {
+          const title=document.getElementById('title').value;
+          localStorage.setItem("eventName",title)
+          const day = document.getElementById("date").value;
+          localStorage.setItem("week",day)
+          const date = new Date(day + 'T00:00:00'); // will be in local time
+
+          if (!isNaN(date.valueOf())) { // valid?
+            calendar.addEvent({
+              title: title,
+              start: date,
+              allDay: true
+            });
+            alert('등록 완료');
+          } else {
+            alert('값을 입력해주세요');
+          }
+        }
+      }
+    }
   });
 
   calendar.render();
