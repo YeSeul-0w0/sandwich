@@ -9,7 +9,7 @@ function view(){
   const calendarEl = document.getElementById('calendar');
 
   // const name = document.getElementById('input').value;
-
+      const eventList=[]
   const calendar = new Calendar(calendarEl, {
     plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
     header: {
@@ -25,9 +25,11 @@ function view(){
         text: 'add event...',
         click: function() {
           const title=document.getElementById('title').value;
-          localStorage.setItem("eventName",title)
           const day = document.getElementById("date").value;
-          localStorage.setItem("week",day)
+          const id=localStorage.length+1;
+
+          eventList.push({id,title,day})
+          localStorage.setItem("event",JSON.stringify(eventList));
           const date = new Date(day + 'T00:00:00'); // will be in local time
 
           if (!isNaN(date.valueOf())) { // valid?
