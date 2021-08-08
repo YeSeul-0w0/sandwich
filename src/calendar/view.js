@@ -26,7 +26,7 @@ function view(){
         click: function() {
           const title=document.getElementById('title').value;
           const day = document.getElementById("date").value;
-          const id=localStorage.length+1;
+          const id=eventList.length+1;
 
           eventList.push({id,title,day})
           localStorage.setItem("event",JSON.stringify(eventList));
