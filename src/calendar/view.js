@@ -25,17 +25,21 @@ function view(){
         text: 'add event...',
         click: function() {
           const title=document.getElementById('title').value;
-          const day = document.getElementById("date").value;
+          const startDay = document.getElementById("start").value;
+          const endDay = document.getElementById("end").value;
           const id=eventList.length+1;
 
-          eventList.push({id,title,day})
+          eventList.push({id,title,startDay,endDay})
           localStorage.setItem("event",JSON.stringify(eventList));
-          const date = new Date(day + 'T00:00:00'); // will be in local time
+          const startDate = new Date(startDay + 'T00:00:00');
+          const endDate = new Date(endDay + 'T00:00:00');
 
-          if (!isNaN(date.valueOf())) { // valid?
+          if (!isNaN(startDate.valueOf()) && !isNaN(endDate.valueOf())) {
+            console.log(startDay,endDay)
             calendar.addEvent({
               title: title,
-              start: date,
+              start: startDate,
+              end:endDate,
               allDay: true
             });
             alert('등록 완료');
