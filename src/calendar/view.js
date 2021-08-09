@@ -7,7 +7,6 @@ import listPlugin from '@fullcalendar/list';
 function view(){
     document.addEventListener('DOMContentLoaded', function() {
   const calendarEl = document.getElementById('calendar');
-
   // const name = document.getElementById('input').value;
       const eventList=[]
   const calendar = new Calendar(calendarEl, {
@@ -48,10 +47,13 @@ function view(){
           }
         }
       }
-    }
+    },
+    locale: 'ko',
+    
   });
-
+  calendar.setOption('locale','kr');
   calendar.render();
+  
 });
 }
 
