@@ -1,0 +1,31 @@
+#calendar{
+    width: 65%;
+    height: 50%;
+    z-index: 0;
+}
+
+#input{
+    z-index: 5;
+    position:absolute;
+
+    top:50%;
+    left:50%;
+    transform: translate(-50%, -50%);
+
+    width: 25%;
+    height: 25%;
+    padding: 1em;
+    display: none;
+    border: 3px solid black;
+
+    background-color: bisque;
+
+}
+
+.buttonList{
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.fc-day-sat { color:#0000FF; }     /* 토요일 */
+.fc-day-sun { color:#FF0000; }    /* 일요일 */

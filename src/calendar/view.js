@@ -1,60 +1,59 @@
-import { Calendar } from '@fullcalendar/core';
+import {Calendar} from '@fullcalendar/core';
 import interactionPlugin from '@fullcalendar/interaction';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
+import {enrollment} from "./enrollment.js";
 
-function view(){
-    document.addEventListener('DOMContentLoaded', function() {
-  const calendarEl = document.getElementById('calendar');
-  // const name = document.getElementById('input').value;
-      const eventList=[]
-  const calendar = new Calendar(calendarEl, {
-    plugins: [ interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin ],
-    header: {
-      left: 'prev,next today',
-      center: 'title',
-      right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-    },
-    footerToolbar:{
-      center:'addEventButton'
-    },
-    customButtons: {
-      addEventButton: {
-        text: 'add event...',
-        click: function() {
-          const title=document.getElementById('title').value;
-          const startDay = document.getElementById("start").value;
-          const endDay = document.getElementById("end").value;
-          const id=eventList.length+1;
+function view() {
+    document.addEventListener('DOMContentLoaded', function () {
+        const calendarEl = document.getElementById('calendar');
 
-          eventList.push({id,title,startDay,endDay})
-          localStorage.setItem("event",JSON.stringify(eventList));
-          const startDate = new Date(startDay + 'T00:00:00');
-          const endDate = new Date(endDay + 'T00:00:00');
-
-          if (!isNaN(startDate.valueOf()) && !isNaN(endDate.valueOf())) {
-            console.log(startDay,endDay)
-            calendar.addEvent({
-              title: title,
-              start: startDate,
-              end:endDate,
-              allDay: true
-            });
-            alert('등록 완료');
-          } else {
-            alert('값을 입력해주세요');
-          }
+        const eventList = []
+        const prevList=localStorage.getItem('event')
+        if (prevList){
+            let arry=JSON.parse(prevList)
+            for (let i=0; i<arry.length; i++){
+                eventList.push(arry[i])
+            }
         }
-      }
-    },
-    locale: 'ko',
-    
-  });
-  calendar.setOption('locale','kr');
-  calendar.render();
-  
-});
+
+        const calendar = new Calendar(calendarEl, {
+            selectable: true,
+            plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            },
+
+            dateClick:function (info){
+                const startDay = info.dateStr;
+                const endDay=info.dateStr;
+                enrollment(info,eventList,calendar,startDay,endDay)
+            },
+
+            select:function (info){
+                const startDay = info.startStr;
+                const endDay=info.endStr;
+                enrollment(info,eventList,calendar,startDay,endDay)
+            },
+
+            
+            customButtons: {
+                addEventButton: {
+                    text: 'add event...',
+                    click: function () {
+                    }
+                }
+            },
+            locale: 'ko',
+
+        });
+        calendar.setOption('locale', 'kr');
+        calendar.render();
+
+    });
 }
 
 export default view;
