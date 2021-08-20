@@ -1,5 +1,4 @@
-export function enrollment(info,eventList,calendar,startDay,endDay){
-    console.log("오니?")
+export function enrollment(info,eventList,calendar,start,end){
     const inputCss=document.getElementById('input')
     inputCss.style.display="flex";
     inputCss.style.justifyContent="space-between"
@@ -8,14 +7,12 @@ export function enrollment(info,eventList,calendar,startDay,endDay){
     const confirm=document.getElementById('check');
     confirm.onclick=function (){
         const title = document.getElementById('title').value;
-
         const id = eventList.length + 1;
-        eventList.push({id, title, startDay, endDay})
+        eventList.push({id, title, start, end})
         localStorage.setItem("event", JSON.stringify(eventList));
-        const startDate = new Date(startDay + 'T00:00:00');
-        const endDate = new Date(endDay + 'T00:00:00');
+        const startDate = new Date(start + 'T00:00:00');
+        const endDate = new Date(end + 'T00:00:00');
         if (!isNaN(startDate.valueOf()) && !isNaN(endDate.valueOf())) {
-            console.log(startDay, endDay)
             calendar.addEvent({
                 title: title,
                 start: startDate,
