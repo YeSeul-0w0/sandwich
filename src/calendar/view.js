@@ -5,21 +5,17 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 import listPlugin from '@fullcalendar/list';
 import {enrollment} from "./enrollment.js";
 import {moreInfo} from "./moreInfo";
+import {loadEvent} from "./loadEvent";
 
 function view() {
     document.addEventListener('DOMContentLoaded', function () {
+
         const calendarEl = document.getElementById('calendar');
-        const eventList = []
-        const prevList = localStorage.getItem('event')
-        if (prevList) {
-            let array = JSON.parse(prevList)
-            for (let i = 0; i < array.length; i++) {
-                eventList.push(array[i])
-            }
-        }
+
+        const list=loadEvent();
 
         const calendar = new Calendar(calendarEl, {
-            events: eventList,
+            events: list,
             selectable: true,
             plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
             header: {
@@ -29,8 +25,8 @@ function view() {
             },
 
             eventClick: function (info) {
-                console.log(info.event.id);
-                moreInfo(info,calendar)
+                const flag=info.event.id-1;
+                moreInfo(info,flag,calendar)
             },
 
             dateClick: function (info) {
