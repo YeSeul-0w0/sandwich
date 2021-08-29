@@ -29,6 +29,7 @@ function view() {
             },
 
             eventClick: function (info) {
+                console.log(info.event.id);
                 moreInfo(info,calendar)
             },
 
