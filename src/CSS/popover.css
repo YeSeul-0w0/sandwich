@@ -1,0 +1,24 @@
+#enroll_input{
+    z-index: 3;
+    width: 25%;
+    height: 25%;
+    padding: 1em;
+    display: none;
+    border: 3px solid black;
+    background-color: bisque;
+}
+
+.buttonList{
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+#more_input{
+    z-index: 2;
+    width: 25%;
+    height: 25%;
+    padding: 1em;
+    display: none;
+    border: 3px solid black;
+    background-color: aliceblue;
+}

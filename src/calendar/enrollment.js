@@ -1,12 +1,12 @@
 export function enrollment(info,eventList,calendar,start,end){
-    const inputCss=document.getElementById('input')
+    const inputCss=document.getElementById('enroll_input')
     inputCss.style.display="flex";
     inputCss.style.justifyContent="space-between"
     inputCss.style.flexDirection="column"
 
-    const confirm=document.getElementById('check');
+    const confirm=document.getElementById('enroll_check');
     confirm.onclick=function (){
-        const title = document.getElementById('title').value;
+        const title = document.getElementById('enroll_title').value;
         const id = eventList.length + 1;
         eventList.push({id, title, start, end})
         localStorage.setItem("event", JSON.stringify(eventList));
@@ -21,16 +21,16 @@ export function enrollment(info,eventList,calendar,start,end){
             });
             alert('등록 완료');
             inputCss.style.display="none";
-            document.getElementById('title').value=""
+            document.getElementById('enroll_title').value=""
         } else {
             alert('값을 입력해주세요');
         }
 
     }
-    const revoke=document.getElementById('cancel');
+    const revoke=document.getElementById('enroll_cancel');
     revoke.onclick=function (){
         inputCss.style.display="none"
-        document.getElementById('title').value=""
+        document.getElementById('enroll_title').value=""
     }
 
 }
