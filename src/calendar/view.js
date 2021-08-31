@@ -32,13 +32,13 @@ function view() {
             dateClick: function (info) {
                 const startDay = info.dateStr;
                 const endDay = info.dateStr;
-                enrollment(info, eventList, calendar, startDay, endDay)
+                enrollment(info, list, calendar, startDay, endDay)
             },
 
             select: function (info) {
                 const startDay = info.startStr;
                 const endDay = info.endStr;
-                enrollment(info, eventList, calendar, startDay, endDay)
+                enrollment(info, list, calendar, startDay, endDay)
             },
 
             locale: 'ko',
