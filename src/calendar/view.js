@@ -25,7 +25,7 @@ function view() {
             },
 
             eventClick: function (info) {
-                const flag=info.event.id-1;
+                const flag=info.event.id;
                 moreInfo(info,flag,calendar)
             },
 

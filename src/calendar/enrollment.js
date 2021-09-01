@@ -7,7 +7,7 @@ export function enrollment(info,eventList,calendar,start,end){
     const confirm=document.getElementById('enroll_check');
     confirm.onclick=function (){
         const title = document.getElementById('enroll_title').value;
-        const id = eventList.length + 1;
+        const id = eventList.length;
         eventList.push({id, title, start, end})
         localStorage.setItem("event", JSON.stringify(eventList));
         const startDate = new Date(start + 'T00:00:00');
