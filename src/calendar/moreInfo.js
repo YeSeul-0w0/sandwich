@@ -68,12 +68,12 @@ export function moreInfo(info, flag,calendar) {
                 array[flag].start = newStart;
                 array[flag].end = newEnd;
 
-                calendar.addEvent({
-                    title: newTitle,
-                    start: newStart,
-                    end: newEnd,
-                    allDay: true
-                });
+                // calendar.addEvent({
+                //     title: newTitle,
+                //     start: newStart,
+                //     end: newEnd,
+                //     allDay: true
+                // });
 
                 // 일단 수정은 되는데 수정 하고 event 리스트를 재로딩 해야하는데 그 함수가 뭔지 모르겠다
                 // 있을 것 같은디
