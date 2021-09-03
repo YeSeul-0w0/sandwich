@@ -1,4 +1,5 @@
-import {loadEvent} from "./loadEvent";
+import {endPlus} from "./endPlus";
+import {endMinus} from "./endMinus";
 
 export function moreInfo(info, flag,calendar) {
     const dataInfo = document.getElementById('more_info')
@@ -12,15 +13,17 @@ export function moreInfo(info, flag,calendar) {
 
     if (eventEnd==null) {
         dataInfo.innerHTML = `<div class='title'>${eventName}</div>
-                        <div class='start-day'>${eventStart.getFullYear()}-${eventStart.getMonth()}-${eventStart.getDate()}</div>  
+                        <div class='start-day'>${eventStart.getFullYear()}-${eventStart.getMonth()+1}-${eventStart.getDate()}</div>  
                         <div class="buttonList">
                             <button id="more_modify">수정</button>
                             <button id="more_cancel">취소</button>
                         </div>`
     } else {
+        const calEnd=endMinus(eventEnd).split('-');
+
         dataInfo.innerHTML = `<div class='title'>${eventName}</div>
-                        <div class='start-day'>${eventStart.getFullYear()}-${eventStart.getMonth()}-${eventStart.getDate()}</div>  
-                        <div class='end-day'>${eventEnd.getFullYear()}-${eventEnd.getMonth()}-${eventEnd.getDate()}</div>  
+                        <div class='start-day'>${eventStart.getFullYear()}-${eventStart.getMonth()+1}-${eventStart.getDate()}</div>  
+                        <div class='end-day'>${calEnd[0]}-${calEnd[1]}-${calEnd[2]}</div>  
                         <div class="buttonList">
                             <button id="more_modify">수정</button>
                             <button id="more_cancel">취소</button>
@@ -58,7 +61,14 @@ export function moreInfo(info, flag,calendar) {
             const newStart=document.getElementById('new_start').value;
             const newEnd=document.getElementById('new_end').value;
 
-            console.log(newEnd)
+            let calEndDay=0;
+            if (newStart==newEnd){
+                calEndDay=newStart
+            }
+            else{
+                calEndDay=endPlus(newEnd)
+            }
+
 
             if(newTitle && newStart && newEnd) {
                 const prevList = localStorage.getItem('event')
@@ -66,17 +76,8 @@ export function moreInfo(info, flag,calendar) {
                 let array = JSON.parse(prevList);
                 array[flag].title = newTitle;
                 array[flag].start = newStart;
-                array[flag].end = newEnd;
+                array[flag].end = calEndDay;
 
-                // calendar.addEvent({
-                //     title: newTitle,
-                //     start: newStart,
-                //     end: newEnd,
-                //     allDay: true
-                // });
-
-                // 일단 수정은 되는데 수정 하고 event 리스트를 재로딩 해야하는데 그 함수가 뭔지 모르겠다
-                // 있을 것 같은디
 
                 localStorage.setItem("event", JSON.stringify(array));
 

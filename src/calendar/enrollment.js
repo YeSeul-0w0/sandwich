@@ -12,11 +12,13 @@ export function enrollment(info,eventList,calendar,start,end){
         localStorage.setItem("event", JSON.stringify(eventList));
         const startDate = new Date(start + 'T00:00:00');
         const endDate = new Date(end + 'T00:00:00');
-        if (title && !isNaN(startDate.valueOf()) && !isNaN(endDate.valueOf())) {
+
+
+        if (title && start && end) {
             calendar.addEvent({
                 title: title,
-                start: startDate,
-                end: endDate,
+                start: start,
+                end: end,
                 allDay: true
             });
             // alert('등록 완료');

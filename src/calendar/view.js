@@ -43,7 +43,9 @@ function view() {
 
             locale: 'ko',
 
+
         });
+
         calendar.setOption('locale', 'kr');
         calendar.render();
 
