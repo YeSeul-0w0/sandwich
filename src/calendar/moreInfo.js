@@ -65,12 +65,6 @@ export function moreInfo(info, flag,calendar) {
             date.setTime(temp + 1000 * 60 * 60 * 24);
             calEndDay = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
 
-            if (newStart==newEnd){
-                calEndDay=newStart
-            }
-            else{
-                calEndDay=endPlus(newEnd)
-            }
 
 
             if(newTitle && newStart && newEnd) {
