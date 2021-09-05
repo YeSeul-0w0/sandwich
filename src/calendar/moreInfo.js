@@ -1,6 +1,3 @@
-import {endPlus} from "./endPlus";
-import {endMinus} from "./endMinus";
-
 export function moreInfo(info, flag,calendar) {
     const dataInfo = document.getElementById('more_info')
 
@@ -19,11 +16,12 @@ export function moreInfo(info, flag,calendar) {
                             <button id="more_cancel">취소</button>
                         </div>`
     } else {
-        const calEnd=endMinus(eventEnd).split('-');
+        const setDate=new Date(eventEnd)
+        setDate.setTime(setDate.getTime() - 1000*60*60*24);
 
         dataInfo.innerHTML = `<div class='title'>${eventName}</div>
                         <div class='start-day'>${eventStart.getFullYear()}-${eventStart.getMonth()+1}-${eventStart.getDate()}</div>  
-                        <div class='end-day'>${calEnd[0]}-${calEnd[1]}-${calEnd[2]}</div>  
+                        <div class='end-day'>${setDate.getFullYear()}-${setDate.getMonth() + 1}-${setDate.getDate()}</div>  
                         <div class="buttonList">
                             <button id="more_modify">수정</button>
                             <button id="more_cancel">취소</button>
@@ -62,6 +60,11 @@ export function moreInfo(info, flag,calendar) {
             const newEnd=document.getElementById('new_end').value;
 
             let calEndDay=0;
+            let date = new Date(newEnd);
+            let temp = date.getTime();
+            date.setTime(temp + 1000 * 60 * 60 * 24);
+            calEndDay = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
+
             if (newStart==newEnd){
                 calEndDay=newStart
             }
