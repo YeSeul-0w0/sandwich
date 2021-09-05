@@ -27,6 +27,7 @@ function view() {
             eventClick: function (info) {
                 const flag=info.event.id;
                 moreInfo(info,flag,calendar)
+
             },
 
             dateClick: function (info) {
@@ -40,9 +41,8 @@ function view() {
                 const endDay = info.endStr;
                 enrollment(info, list, calendar, startDay, endDay)
             },
-
             locale: 'ko',
-
+            progressiveEventRendering: true,
 
         });
 

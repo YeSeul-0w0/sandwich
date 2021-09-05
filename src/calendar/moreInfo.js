@@ -73,10 +73,16 @@ export function moreInfo(info, flag,calendar) {
                 let array = JSON.parse(prevList);
                 array[flag].title = newTitle;
                 array[flag].start = newStart;
-                array[flag].end = calEndDay;
+                array[flag].end = calEndDay
 
+                info.event.setProp("title", newTitle);
+                info.event.setEnd(new Date (newEnd));
+                info.event.setStart(new Date(newStart))
+
+                calendar.refetchEvents();
 
                 localStorage.setItem("event", JSON.stringify(array));
+
 
             }
         }
