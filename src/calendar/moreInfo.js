@@ -40,7 +40,6 @@ export function moreInfo(info, flag,calendar) {
         let temp=array.filter((e)=>e.id!=flag)
 
         localStorage.setItem("event", JSON.stringify(temp));
-        console.log("삭제시",temp)
 
     }
 
