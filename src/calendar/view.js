@@ -14,6 +14,7 @@ function view() {
 
         const list=loadEvent();
 
+
         const calendar = new Calendar(calendarEl, {
             events: list,
             selectable: true,
@@ -26,6 +27,7 @@ function view() {
 
             eventClick: function (info) {
                 const flag=info.event.id;
+                console.log(flag)
                 moreInfo(info,flag,calendar)
 
             },
@@ -33,7 +35,7 @@ function view() {
             dateClick: function (info) {
                 const startDay = info.dateStr;
                 const endDay = info.dateStr;
-                enrollment(info, list, calendar, startDay, endDay)
+                enrollment(info, calendar, startDay, endDay)
             },
 
             select: function (info) {

@@ -1,18 +1,26 @@
-export function enrollment(info,eventList,calendar,start,end){
+import {loadEvent} from "./loadEvent";
+
+export function enrollment(info,calendar,start,end){
     const inputCss=document.getElementById('enroll_input')
     inputCss.style.display="flex";
     inputCss.style.justifyContent="space-between"
     inputCss.style.flexDirection="column"
 
     const confirm=document.getElementById('enroll_check');
+
     confirm.onclick=function (){
+        const eventList=loadEvent();
+
         const title = document.getElementById('enroll_title').value;
-        const id = eventList.length;
+
+        let standard=0;
+        if(eventList.length!=0){
+            standard=eventList[eventList.length-1].id
+        }
+        const id = standard+1;
+
         eventList.push({id, title, start, end})
         localStorage.setItem("event", JSON.stringify(eventList));
-        const startDate = new Date(start + 'T00:00:00');
-        const endDate = new Date(end + 'T00:00:00');
-
 
         if (title && start && end) {
             calendar.addEvent({
@@ -21,7 +29,6 @@ export function enrollment(info,eventList,calendar,start,end){
                 end: end,
                 allDay: true
             });
-            // alert('등록 완료');
             inputCss.style.display="none";
             document.getElementById('enroll_title').value=""
         } else {

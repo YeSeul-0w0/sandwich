@@ -13,6 +13,7 @@ export function moreInfo(info, flag,calendar) {
                         <div class='start-day'>${eventStart.getFullYear()}-${eventStart.getMonth()+1}-${eventStart.getDate()}</div>  
                         <div class="buttonList">
                             <button id="more_modify">수정</button>
+                            <button id="more_del">삭제</button>
                             <button id="more_cancel">취소</button>
                         </div>`
     } else {
@@ -24,8 +25,23 @@ export function moreInfo(info, flag,calendar) {
                         <div class='end-day'>${setDate.getFullYear()}-${setDate.getMonth() + 1}-${setDate.getDate()}</div>  
                         <div class="buttonList">
                             <button id="more_modify">수정</button>
+                            <button id="more_del">삭제</button>
                             <button id="more_cancel">취소</button>
                         </div>`
+    }
+
+    const del=document.getElementById("more_del")
+    del.onclick=function (){
+        dataInfo.style.display='none'
+        calendar.getEventById(flag).remove()
+        const prevList = localStorage.getItem('event')
+
+        let array = JSON.parse(prevList);
+        let temp=array.filter((e)=>e.id!=flag)
+
+        localStorage.setItem("event", JSON.stringify(temp));
+        console.log("삭제시",temp)
+
     }
 
 
@@ -64,7 +80,6 @@ export function moreInfo(info, flag,calendar) {
             let temp = date.getTime();
             date.setTime(temp + 1000 * 60 * 60 * 24);
             calEndDay = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`;
-
 
 
             if(newTitle && newStart && newEnd) {
