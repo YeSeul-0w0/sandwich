@@ -19,6 +19,7 @@ export function enrollment(info,calendar,start,end){
         }
         const id = standard+1;
 
+
         eventList.push({id, title, start, end})
         localStorage.setItem("event", JSON.stringify(eventList));
 

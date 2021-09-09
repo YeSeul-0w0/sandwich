@@ -27,7 +27,7 @@ function view() {
 
             eventClick: function (info) {
                 const flag=info.event.id;
-                console.log(flag)
+                console.log("id값 ",flag);
                 moreInfo(info,flag,calendar)
 
             },
@@ -41,7 +41,7 @@ function view() {
             select: function (info) {
                 const startDay = info.startStr;
                 const endDay = info.endStr;
-                enrollment(info, list, calendar, startDay, endDay)
+                enrollment(info, calendar, startDay, endDay)
             },
             locale: 'ko',
             progressiveEventRendering: true,
