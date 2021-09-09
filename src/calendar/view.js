@@ -19,10 +19,10 @@ function view() {
             events: list,
             selectable: true,
             plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
-            header: {
-                left: 'prev,next today',
+            headerToolbar: {
+                left: 'today',
                 center: 'title',
-                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+                right: 'prev,next'
             },
 
             eventClick: function (info) {
