@@ -1,7 +1,8 @@
 import {getFormatDate} from "./getFormatDate";
 
-export function moreInfo(info, flag,calendar) {
+export function moreInfo(info,calendar) {
     const dataInfo = document.getElementById('more_info')
+    const flag=info.event.id;
 
     dataInfo.style.display = "flex";
     dataInfo.style.justifyContent = "space-between"
@@ -88,8 +89,8 @@ export function moreInfo(info, flag,calendar) {
                 let array = JSON.parse(prevList); // 로컬스토리지에서 불러온 이벤트값을 배열로 치환
                 let idx=array.findIndex(e=>e.id==flag);
 
-                console.log("id값은? ",flag)
-                console.log("인덱스",idx)
+                // console.log("id값은? ",flag)
+                // console.log("인덱스",idx)
 
                 array[idx].title = newTitle;
                 array[idx].start = newStart;
@@ -97,6 +98,7 @@ export function moreInfo(info, flag,calendar) {
 
                calendar.getEventById(flag).remove(); // 수정하기 전 정보가 들어있는 이벤트 삭제
                calendar.addEvent({ // 수정 된 정보가 들어간 이벤트 등록
+                   id:flag,
                    title: newTitle,
                    start: newStart,
                    end: calEndDay,
