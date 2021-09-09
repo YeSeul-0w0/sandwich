@@ -29,7 +29,6 @@ function view() {
                 const flag=info.event.id;
                 console.log("id값 ",flag);
                 moreInfo(info,flag,calendar)
-
             },
 
             dateClick: function (info) {
