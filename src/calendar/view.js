@@ -6,6 +6,7 @@ import listPlugin from '@fullcalendar/list';
 import {enrollment} from "./enrollment.js";
 import {moreInfo} from "./moreInfo";
 import {loadEvent} from "./loadEvent";
+import 'C:/Users/user/Documents/GitHub/sandwich/src/CSS/bootstrap.css';
 
 function view() {
     document.addEventListener('DOMContentLoaded', function () {
@@ -42,8 +43,11 @@ function view() {
             },
             locale: 'ko',
             progressiveEventRendering: true,
-
+            
+            //plugins: [ bootstrapPlugin ],
+            themeSystem: 'bootstrap'
         });
+
 
         calendar.setOption('locale', 'kr');
         calendar.render();
