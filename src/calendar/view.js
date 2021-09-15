@@ -6,9 +6,9 @@ import listPlugin from '@fullcalendar/list';
 import {enrollment} from "./enrollment.js";
 import {moreInfo} from "./moreInfo";
 import {loadEvent} from "./loadEvent";
-import '../CSS/bootstrap/bootstrap.css';
 
 function view() {
+
     document.addEventListener('DOMContentLoaded', function () {
 
         const calendarEl = document.getElementById('calendar');
@@ -50,7 +50,8 @@ function view() {
 
         calendar.setOption('locale', 'kr');
         calendar.render();
-
+        console.log(document.getElementsByClassName('fc-scrollgrid  fc-scrollgrid-liquid').getElementsByTagName('fc-day-sat'))
+        // .color="#0000FF";
 
     });
 }
