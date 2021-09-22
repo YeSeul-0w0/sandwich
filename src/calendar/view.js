@@ -50,8 +50,7 @@ function view() {
 
         calendar.setOption('locale', 'kr');
         calendar.render();
-        console.log(document.getElementsByClassName('fc-scrollgrid  fc-scrollgrid-liquid').getElementsByTagName('fc-day-sat'))
-        // .color="#0000FF";
+
 
     });
 }
