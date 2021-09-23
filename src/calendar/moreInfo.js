@@ -10,12 +10,11 @@ export function moreInfo(info, calendar) {
     const eventName = info.event.title;
     const eventStart = info.event.start;
     const eventEnd = info.event.end;
-
+    //
     if (eventEnd == null) {
-        dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 40%; height: 25%;">
-            <div class="card-header">Info</div>
+        dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 30%; height: 20%;">
+            <div class="card-header">${eventName}</div>
                 <div class="card-body">
-                    <h4 class="card-title">${eventName}</h4>
                     <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()}</p>
                     <div class="buttonList">
                             <button id="more_modify" type="button" class="btn btn-outline-warning">수정</button>
