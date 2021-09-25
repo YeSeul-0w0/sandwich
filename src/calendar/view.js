@@ -19,6 +19,7 @@ function view() {
         const calendar = new Calendar(calendarEl, {
             events: list,
             selectable: true,
+            aspectRatio: 1.3,
             plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
             headerToolbar: {
                 left: 'today',

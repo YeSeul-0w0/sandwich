@@ -27,10 +27,9 @@ export function moreInfo(info, calendar) {
         const newDayEnd = new Date(eventEnd)
         newDayEnd.setDate(newDayEnd.getDate() - 1); //이벤트 정보 표시시 끝 날짜 하루 빼주는 역할
         if (newDayEnd.getTime()===new Date(eventStart).getTime()){
-            dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 40%; height: 25%;">
-            <div class="card-header">Info</div>
+            dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 30%; height: 20%;">
+            <div class="card-header">${eventName}</div>
                 <div class="card-body">
-                    <h4 class="card-title">${eventName}</h4>
                     <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()}</p>
                     <div class="buttonList">
                             <button id="more_modify" type="button" class="btn btn-outline-warning">수정</button>
@@ -41,12 +40,12 @@ export function moreInfo(info, calendar) {
            </div>`
         }
         else{
-            dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 40%; height: 25%;">
-            <div class="card-header">Info</div>
+            dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 30%; height: 20%;">
+            <div class="card-header">${eventName}</div>
                 <div class="card-body">
-                    <h4 class="card-title">${eventName}</h4>
-                    <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()}</p>
-                    <p class="card-text">${newDayEnd.getFullYear()}-${newDayEnd.getMonth() + 1}-${newDayEnd.getDate()}</p>
+                    <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()} ~ 
+                    ${newDayEnd.getFullYear()}-${newDayEnd.getMonth() + 1}-${newDayEnd.getDate()}
+                    </p>
                     <div class="buttonList">
                             <button id="more_modify" type="button" class="btn btn-outline-warning">수정</button>
                             <button id="more_del" type="button" class="btn btn-outline-danger">삭제</button>
