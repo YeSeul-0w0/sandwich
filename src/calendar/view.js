@@ -6,6 +6,7 @@ import listPlugin from '@fullcalendar/list';
 import {enrollment} from "./enrollment.js";
 import {moreInfo} from "./moreInfo";
 import {loadEvent} from "./loadEvent";
+import {today} from "./today";
 
 function view() {
 
@@ -16,8 +17,11 @@ function view() {
         const list=loadEvent();
 
 
+
+
         const calendar = new Calendar(calendarEl, {
             events: list,
+            eventColor: '#b6b8c3',
             selectable: true,
             aspectRatio: 1.3,
             plugins: [interactionPlugin, dayGridPlugin, timeGridPlugin, listPlugin],
@@ -48,6 +52,7 @@ function view() {
             themeSystem: 'bootstrap'
         });
 
+        today(list,calendar);
 
         calendar.setOption('locale', 'kr');
         calendar.render();

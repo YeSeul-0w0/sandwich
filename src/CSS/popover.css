@@ -1,12 +1,6 @@
-/*#enroll_input{*/
-/*    z-index: 3;*/
-/*    width: 25%;*/
-/*    height: 25%;*/
-/*    padding: 1em;*/
-/*    display: none;*/
-/*    border: 3px solid black;*/
-/*    background-color: bisque;*/
-/*}*/
+#enroll_input{
+    display: none;
+}
 
 .buttonList{
     margin: 0.3rem;
