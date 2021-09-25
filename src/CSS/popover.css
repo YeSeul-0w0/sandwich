@@ -1,15 +1,15 @@
-#enroll_input{
-    z-index: 3;
-    width: 25%;
-    height: 25%;
-    padding: 1em;
-    display: none;
-    border: 3px solid black;
-    background-color: bisque;
-}
+/*#enroll_input{*/
+/*    z-index: 3;*/
+/*    width: 25%;*/
+/*    height: 25%;*/
+/*    padding: 1em;*/
+/*    display: none;*/
+/*    border: 3px solid black;*/
+/*    background-color: bisque;*/
+/*}*/
 
 .buttonList{
-
+    margin: 0.3rem;
 }
 
 /*#more_info{*/
@@ -22,12 +22,12 @@
 /*    background-color: aliceblue;*/
 /*}*/
 
-#modify{
-    z-index: 3;
-    width: 25%;
-    height: 25%;
-    padding: 1em;
-    display: none;
-    border: 3px solid black;
-    background-color: darkseagreen;
-}
+/*#modify{*/
+/*    z-index: 3;*/
+/*    width: 25%;*/
+/*    height: 25%;*/
+/*    padding: 1em;*/
+/*    display: none;*/
+/*    border: 3px solid black;*/
+/*    background-color: darkseagreen;*/
+/*}*/

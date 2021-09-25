@@ -84,13 +84,23 @@ export function moreInfo(info, calendar) {
         pop.style.flexDirection = "column"
 
         pop.innerHTML = `
-            <input type="text" id="new_title">
-            <input type="date" id="new_start">
-            <input type="date" id="new_end">
-             <div class="buttonList">
-             <button id="new_check">확인</button>
-             <button id="new_cancel">취소</button>
-            </div>
+
+            <div class="card" style="width: 30%; height: 20%;">
+                <div class="card-body">
+                    <h4 class="card-title">수정</h4>
+                    <p class="card-text">
+                        일정 명 <input type="text" id="new_title" style="margin: 0.5rem"> <br>
+                        시작 날짜 <input type="date" id="new_start" style="margin: 0.5rem"> <br>
+                        끝 날짜 <input type="date" id="new_end" style="margin: 0.5rem"> <br>
+                        <div class="buttonList">
+                            <button id="new_check" class="btn btn-outline-success">확인</button>
+                            <button id="new_cancel" class="btn btn-outline-dark">취소</button>
+                        </div>
+                    </p>
+                 </div>
+               </div>
+
+
         `
         document.getElementById('new_cancel').onclick = function () {
             pop.style.display = "none";
