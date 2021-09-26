@@ -17,7 +17,7 @@ function view() {
         const list=loadEvent();
 
 
-
+        today(list);
 
         const calendar = new Calendar(calendarEl, {
             events: list,
@@ -52,7 +52,7 @@ function view() {
             themeSystem: 'bootstrap'
         });
 
-        today(list,calendar);
+
 
         calendar.setOption('locale', 'kr');
         calendar.render();

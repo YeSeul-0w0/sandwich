@@ -137,7 +137,6 @@ export function moreInfo(info, calendar) {
                     allDay: true
                 })
 
-
                 // info.event.setProp("title", newTitle);
                 // info.event.setEnd(calEndDay);
                 // info.event.setStart(newStart);
@@ -145,7 +144,6 @@ export function moreInfo(info, calendar) {
                 // calendar.refetchEvents();
 
                 localStorage.setItem("event", JSON.stringify(array)); //로컬스토리지에 저장하려면 문자열로 치환해야함
-
 
                 pop.style.display = "none"; //이벤트 등록 끝나면 이벤트 수정 창 사라지게함
             } else {
