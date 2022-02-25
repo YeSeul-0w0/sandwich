@@ -11,13 +11,13 @@
 <body>
     <header>
         <div id="weather">
-            날씨
+
         </div>
         <div id="name">
-            캘린더
+            <h1>Calendar</h1>
         </div>
         <div id="setting">
-        설정
+            <small class="text-muted">Make A Good Plan</small>
         </div>
     </header>
     <div id="frame">
@@ -26,44 +26,54 @@
         </div>
 
         <div id="right">
-            <div id="today_event">
+            <div id="right-top">
+                <div id="today_event">
 
-            </div>
+                </div>
+                <div id="memo">
 
-
-            <div id="enroll_input">
-                <div class="card border-warning mb-3" style="width: 30%; height: 20%;">
-                    <div class="card-header">새 일정</div>
-                    <div class="card-body">
-                        <p class="card-text">
-                            일정 명
-                            <input type="text" id="enroll_title">
-                        </p>
-                        <div class="buttonList">
-                            <button id="enroll_check" class="btn btn-outline-success">확인</button>
-                            <button id="enroll_cancel" class="btn btn-outline-dark">취소</button>
-                        </div>
-                    </div>
                 </div>
             </div>
 
-            <div id="more_info">
 
+            <div id="right-bottom">
+                <div id="enroll_input">
+                    <div class="card border-warning mb-3">
+                        <div class="card-header">새 일정</div>
+                        <div class="card-body">
+                            <p class="card-text">
+                                일정 명
+                                <input type="text" id="enroll_title">
+                            </p>
+                            <div class="buttonList">
+                                <button id="enroll_check" class="btn btn-outline-success">확인</button>
+                                <button id="enroll_cancel" class="btn btn-outline-dark">취소</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="more_info">
+
+                </div>
+
+                <div id="modify">
+
+                </div>
             </div>
 
-            <div id="modify">
 
-            </div>
+
+
         </div>
+
     </div>
+    <footer>
+        <p class="text-muted">Good Luck</p>
+    </footer>
 
 
-
-
-
-    
-    
-    <script src="app.js"></script>
+<script src="app.js"></script>
 </body>
 
 </html>

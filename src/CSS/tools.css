@@ -1,0 +1,20 @@
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding:0.3rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.5rem;
+    height:  10%;
+}
+
+
+#setting, #weather{
+    padding-top:0.4rem;
+}
+
+footer{
+    height: 10%;
+    text-align: center;
+    padding-top: 0.5rem;
+}

@@ -9,8 +9,8 @@ function onGeoOk(position){
         const weatherInfo=document.getElementById("weather");
         const city=data.name;
         const kind=data.weather[0].main;
-        const heat=data.main.temp;
-        weatherInfo.innerText=`${city} ${kind} ${heat}`
+        const heat=Math.ceil(data.main.temp);
+        weatherInfo.innerHTML=`<p class="text-success">${city}  ${kind}  ${heat}℃</>`
     });
     // 서버가 url에 접근, url에 접근을 하면 then 뒤에 구문들이 실행됨
     // url의 json 파일을 불러옴(=response.json)

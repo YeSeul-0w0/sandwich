@@ -4,7 +4,6 @@ export function enrollment(info,calendar,start,end){
     const inputCss=document.getElementById('enroll_input')
     inputCss.style.display="flex";
     inputCss.style.justifyContent="space-between"
-    inputCss.style.flexDirection="column"
 
     const confirm=document.getElementById('enroll_check');
 

@@ -6,13 +6,12 @@ export function moreInfo(info, calendar) {
 
     dataInfo.style.display = "flex";
     dataInfo.style.justifyContent = "space-between"
-    dataInfo.style.flexDirection = "column"
     const eventName = info.event.title;
     const eventStart = info.event.start;
     const eventEnd = info.event.end;
-    //
+
     if (eventEnd == null) {
-        dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 30%; height: 20%;">
+        dataInfo.innerHTML = `<div class="card border-info mb-3">
             <div class="card-header">${eventName}</div>
                 <div class="card-body">
                     <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()}</p>
@@ -27,7 +26,7 @@ export function moreInfo(info, calendar) {
         const newDayEnd = new Date(eventEnd)
         newDayEnd.setDate(newDayEnd.getDate() - 1); //이벤트 정보 표시시 끝 날짜 하루 빼주는 역할
         if (newDayEnd.getTime()===new Date(eventStart).getTime()){
-            dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 30%; height: 20%;">
+            dataInfo.innerHTML = `<div class="card border-info mb-3">
             <div class="card-header">${eventName}</div>
                 <div class="card-body">
                     <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()}</p>
@@ -40,7 +39,7 @@ export function moreInfo(info, calendar) {
            </div>`
         }
         else{
-            dataInfo.innerHTML = `<div class="card border-info mb-3" style="width: 30%; height: 20%;">
+            dataInfo.innerHTML = `<div class="card border-info mb-3">
             <div class="card-header">${eventName}</div>
                 <div class="card-body">
                     <p class="card-text">${eventStart.getFullYear()}-${eventStart.getMonth() + 1}-${eventStart.getDate()} ~ 
@@ -81,11 +80,8 @@ export function moreInfo(info, calendar) {
         const pop = document.getElementById('modify')
         pop.style.display = "flex"
         pop.style.justifyContent = "space-between"
-        pop.style.flexDirection = "column"
-
         pop.innerHTML = `
-
-            <div class="card" style="width: 30%; height: 20%;">
+            <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">수정</h4>
                     <p class="card-text">

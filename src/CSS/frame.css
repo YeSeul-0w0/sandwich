@@ -1,18 +1,42 @@
 #frame{
     width: 100vw;
-    height: 100vh;
+    height: 70%;
     display: flex;
     flex-direction: row;
 }
 
 #left{
+    padding-left: 2rem;
     width: 50%;
-    height: 95%;
+    height: 100%;
 }
 
 #right{
     width: 50%;
     height: 100%;
+    padding-left: 2rem;
+}
+
+#right #right-top{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#right-top #memo, #today_event{
+    width: 45%;
+    margin: 0.3em;
+}
+
+#right #right-bottom{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#right-bottom #modify, #enroll_input, #more_info{
+    width: 45%;
+    margin: 0.3em;
 }
 
 
