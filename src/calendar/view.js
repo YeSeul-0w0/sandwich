@@ -56,8 +56,6 @@ function view() {
         calendar.setOption('locale', 'kr');
         calendar.render();
 
-        memo();
-
     });
 }
 
