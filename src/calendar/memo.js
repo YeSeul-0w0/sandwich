@@ -9,19 +9,9 @@ export function memo() {
             save_list.push(array[i])
         }
     }
+    //<p class="card-text">${save_list}</p>
+    // <button id="enroll" type="button" class="btn btn-success">등록</button>
+    // <button id="del" type="button" class="btn btn-danger">취소</button>
 
-    memo_info.innerHTML = `
-    <div class="card text-white bg-dark mb-3">
-        <div class="card-header">Memo</div>
-            <div class="card-body">
-                <p class="card-text">${save_list}</p>
-                <h4 class="card-title">Enter Memo</h4>
-                <textarea name="memo" rows="3" cols="40"></textarea>
-                <div class="buttons">
-                    <button id="enroll" type="button" class="btn btn-success">등록</button>
-                    <button id="del" type="button" class="btn btn-danger">취소</button>
-                </div>
-            </div>
-    </div>
-    `
+    // memo_info.innerHTML = ``
 }
