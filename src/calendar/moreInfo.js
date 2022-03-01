@@ -106,7 +106,7 @@ export function moreInfo(info, calendar) {
             const newTitle = document.getElementById('new_title').value;
             const newStart = document.getElementById('new_start').value;
             const newEnd = document.getElementById('new_end').value;
-
+            // console.log(newTitle)
             let date = new Date(newEnd);
             date.setDate(date.getDate() + 1);
             const calEndDay = getFormatDate(date) //날짜 형태 맞춰주는것 2021-09-09 이런식으로
