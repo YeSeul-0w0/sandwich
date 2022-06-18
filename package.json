@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/seoyl98/sandwich#readme",
   "devDependencies": {
-    "ansi-html": "^0.0.7",
+    "ansi-html": "^0.0.8",
     "async": "^3.2.4",
     "css-loader": "^6.2.0",
     "dotenv": "^10.0.0",
