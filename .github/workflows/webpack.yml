@@ -9,8 +9,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      WEATHER_API_KEY: ${{secrets.WEATHER}}
 
     strategy:
       matrix:
@@ -44,4 +42,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN  }}
+        WEATHER_API_KEY: ${{secrets.WEATHER}}
         publish_dir: ./dist
