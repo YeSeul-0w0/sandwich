@@ -42,5 +42,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN  }}
-        WEATHER_API_KEY: ${{secrets.WEATHER}}
+        WEATHER_API_KEY: ${{ secrets.WEATHER }}
         publish_dir: ./docs
