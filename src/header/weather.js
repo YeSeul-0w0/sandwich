@@ -23,6 +23,5 @@ function onGeoError(){
 }
 
 export function weather(){
-    console.log(WEATHER_API_KEY);
     navigator.geolocation.getCurrentPosition(onGeoOk,onGeoError);
 }
