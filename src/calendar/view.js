@@ -7,7 +7,6 @@ import {enrollment} from "./enrollment.js";
 import {moreInfo} from "./moreInfo";
 import {loadEvent} from "./loadEvent";
 import {today} from "./today";
-import {memo} from "./memo";
 
 function view() {
 

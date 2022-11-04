@@ -9,9 +9,4 @@ export function memo() {
             save_list.push(array[i])
         }
     }
-    //<p class="card-text">${save_list}</p>
-    // <button id="enroll" type="button" class="btn btn-success">등록</button>
-    // <button id="del" type="button" class="btn btn-danger">취소</button>
-
-    // memo_info.innerHTML = ``
 }
