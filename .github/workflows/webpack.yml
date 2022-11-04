@@ -36,6 +36,7 @@ jobs:
     - name : install
       run: |
         npm install
+        npm install fullcalendar
         
     - name: Build
       run: |
