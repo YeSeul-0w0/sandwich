@@ -1,6 +1,8 @@
 ## Sandwich schedule ver 1 
 >release 2022.03.01
 
+[Link](https://yeseul-0w0.github.io/sandwich)
+
 ### 1. 사용법
 1. 캘린더 사용
     1. 일정 등록 <br>
