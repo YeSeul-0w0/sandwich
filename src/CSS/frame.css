@@ -1,19 +1,26 @@
-#frame{
-    margin: 0 auto;
+#info_window {
+    display: none;
+}
+
+#main_content{
     width: 90%;
     height: 70%;
+}
+
+#frame{
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
 }
 
 #left{
     padding-left: 2rem;
-    width: 50%;
+    width: 60%;
     height: 100%;
 }
 
 #right{
-    width: 50%;
+    width: 40%;
     height: 100%;
     padding-left: 2rem;
 }
@@ -47,3 +54,21 @@
     margin: 0;
 }
 
+@media screen and (max-width: 1400px), screen and (max-height: 910px) {
+    #main_content{
+        display: none;
+    }
+    #info_window{
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #f7f7f7;
+    }
+    .text_info{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 2rem;
+    }
+}

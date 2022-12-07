@@ -9,69 +9,72 @@
 </head>
 
 <body>
-    <header>
-        <div id="name">
-            <h1>Calendar</h1>
+    <div id="info_window">
+        <div class="text_info">
+            <span>가로 1400px 이상과 세로 910px 이상에서만 지원합니다.</span>
         </div>
-    </header>
-    <div id="frame">
-        <div id="left">
-            <div id='calendar'></div>
-        </div>
-
-        <div id="right">
-            <div id="right-top">
-                <div id="today_event">
-                </div>
-                <div id="memo">
-                    <div class="card text-white bg-dark mb-3">
-                        <div class="card-header">Memo</div>
-                        <div class="card-body">
-                            <h4 class="card-title">Enter Memo</h4>
-                            <textarea id="text_area" name="memo" rows="3" cols="38"></textarea>
-                        </div>
-                    </div>
-                </div>
+    </div>
+    <div id="main_content">
+        <header>
+            <div id="name">
+                <h1>Calendar</h1>
+            </div>
+        </header>
+        <div id="frame">
+            <div id="left">
+                <div id='calendar'></div>
             </div>
 
-            <div id="right-bottom">
-                <div id="enroll_input">
-                    <div class="card border-warning mb-3">
-                        <div class="card-header">새 일정</div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                일정 명
-                                <input type="text" id="enroll_title">
-                            </p>
-                            <div class="buttonList">
-                                <button id="enroll_check" class="btn btn-outline-success">확인</button>
-                                <button id="enroll_cancel" class="btn btn-outline-dark">취소</button>
+            <div id="right">
+                <div id="right-top">
+                    <div id="today_event">
+                    </div>
+                    <div id="memo">
+                        <div class="card text-white bg-dark mb-3">
+                            <div class="card-header">Memo</div>
+                            <div class="card-body">
+                                <h4 class="card-title">Enter Memo</h4>
+                                <textarea id="text_area" name="memo" rows="3" cols="38"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div id="more_info">
+                <div id="right-bottom">
+                    <div id="enroll_input">
+                        <div class="card border-warning mb-3">
+                            <div class="card-header">새 일정</div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    일정 명
+                                    <input type="text" id="enroll_title">
+                                </p>
+                                <div class="buttonList">
+                                    <button id="enroll_check" class="btn btn-outline-success">확인</button>
+                                    <button id="enroll_cancel" class="btn btn-outline-dark">취소</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <div id="more_info">
+
+                    </div>
+
+                    <div id="modify">
+
+                    </div>
                 </div>
 
-                <div id="modify">
 
-                </div>
             </div>
 
-
-
-
         </div>
-
+        <footer>
+            <p class="text-muted">Good Luck</p>
+        </footer>
+        <script src="app.js"></script>
     </div>
-    <footer>
-        <p class="text-muted">Good Luck</p>
-    </footer>
-
-
-<script src="app.js"></script>
 </body>
 
 </html>
